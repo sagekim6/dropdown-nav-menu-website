@@ -10,14 +10,14 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="/css/style.css" />
-    <script src="/js/main.js"></script>
+    <script defer src="/js/main.js"></script>
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
   </head>
   <body>
-    <header>
+    <header class="header">
       <div class="title-nav">
         <h1>snap</h1>
-        <nav>
+        <nav class="desktop_nav">
           <button class="features-btn">
             <span>Features</span>
             <img src="images/icon-arrow-down.svg" alt="" />
@@ -34,6 +34,9 @@
         <a href="#" class="login-link">Login</a>
         <a href="#" class="register-link">Register</a>
       </div>
+      <nav class="mobile_nav nav_toggle">
+        <img src="/images/icon-menu.svg" alt="icon_menu" class="icon_menu" />
+      </nav>
     </header>
     <main>
       <section>
@@ -52,11 +55,9 @@
           <img src="images/client-maker.svg" alt="maker" />
         </div>
       </section>
-      <img
-        src="/images/image-hero-desktop.png"
-        alt="deskTopImage"
-        class="bg-image"
-      />
+      <div class="bg-image">
+        <img src="/images/image-hero-desktop.png" alt="deskTopImage" />
+      </div>
     </main>
   </body>
 </html>
