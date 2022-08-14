@@ -119,12 +119,16 @@ header .nav_toggle{
     justify-content: space-between;
   }
   
-  main .bg-image{
+  main .bg-container{
     width: 40%;
     height: 100%;
   }
-
-  main .bg-image img{
+  
+  main .bg-container .bg-image{
+    background-image: url('/images/image-hero-desktop.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
     max-width: 100%;
     height: 100%;
   }
@@ -218,6 +222,61 @@ header .nav_toggle{
 }
 
 /* SMALL SCREEN */
-@media (max-width: 375px){
-  
+@media (max-width: 600px){
+  main{
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+
+  main section{
+    width: 100%;
+    height: 50%;
+  }
+
+  main section .content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main section .content h2{
+    padding: 10px;
+    width: 100%;
+    margin: 0;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  main section .content p{
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0 10px 25px 10px;
+  }
+
+  main .bg-container{
+    height: 50%;
+    width: 100%;
+  }
+  section .learnMore-btn{
+    margin-bottom: 30px;
+  }
+  main .bg-container .bg-image{
+    background-image: url('/images/image-hero-mobile.png');
+  }
+
+  section .client-images{
+    margin-bottom: 40px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  section .client-images > img{
+    margin: 0;
+    width: 18%;
+  }
 }
