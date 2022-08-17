@@ -5,6 +5,10 @@ import { ReactComponent as Maker } from "../images/client-maker.svg";
 import { ReactComponent as Meet } from "../images/client-meet.svg";
 
 const Section = () => {
+  const handldBtnToggle = (e) => {
+    e.target.classList.toggle("learn_more_toggle");
+  };
+
   return (
     <section>
       <div className="content">
@@ -13,7 +17,11 @@ const Section = () => {
           Get your team in sync, no matter your location. Streamline processes,
           create team rituals, and watch productivity soar.
         </p>
-        <Button text="Learn more" className="learn_more_btn" />
+        <Button
+          text="Learn more"
+          className={["learn_more_btn"]}
+          onMouseEvent={handldBtnToggle}
+        />
       </div>
       <div className="client_images">
         <Databiz />

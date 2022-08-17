@@ -1,5 +1,6 @@
 import Button from "./Button";
 import { ReactComponent as ArrowDown } from "../images/icon-arrow-down.svg";
+import { ReactComponent as Menu } from "../images/icon-menu.svg";
 
 const Header = () => {
   return (
@@ -8,15 +9,18 @@ const Header = () => {
         <h1>snap</h1>
         <nav className="destTop_nav">
           <div>
-            <Button text="Features" className="features_btn" />
+            <Button text="Features" className={["features_btn"]} />
             <ArrowDown />
           </div>
           <div>
-            <Button text="Company" className="company_btn" />
+            <Button text="Company" className={["company_btn"]} />
             <ArrowDown />
           </div>
           <a href="#!">Careers</a>
           <a href="#!">About</a>
+        </nav>
+        <nav className="mobile_nav">
+          <Menu width={25} height="18" />
         </nav>
       </div>
       <div className="login_register">
