@@ -39,7 +39,7 @@ header{
 
     h1{
       margin: 0;
-      margin-right: 20px;
+      margin-right: 43px;
     }
 
     .destTop_nav{
@@ -48,23 +48,17 @@ header{
       display: flex;
       align-items: center;
 
-      .features_btn, .company_btn{
+      .features_btn, .company_btn, a{
         color: $gray-color;
       }
 
-      .features_btn:hover, .company_btn:hover{
+      .features_btn:hover, .company_btn:hover, a:hover{
         color: $black-color;
         font-weight: 700;
       }
       
       >*{
         margin-right: 25px;
-        color: $gray-color;
-      }
-
-      >*:hover{
-        color: $black-color;
-        font-weight: 700;
       }
     }
   }
@@ -90,6 +84,51 @@ header{
 
     .register:hover{
       border: 1px solid $black-color;
+    }
+  }
+
+  .collaps_menu{
+    position: absolute;
+    background-color: $white-color;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 8px;
+  }
+
+  .company_info{
+    width: 90px;
+    top: 9%;
+    left: 250px;
+    padding: 10px;
+    color: $gray-color;
+    
+    >*{
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+  }
+
+  .features_info{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    width: 110px;
+    top: 9%;
+    left: 102px;
+    display: inline-block;
+    padding: 10px;
+    color: $gray-color;
+
+    li{
+      display: flex;
+      align-items: center;
+      >*{
+        margin-right: 10px;
+      }
+    }
+
+    >*{
+      margin-bottom: 15px;
     }
   }
 }
