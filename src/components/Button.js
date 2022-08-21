@@ -1,21 +1,10 @@
-const Button = ({
-  text = "",
-  className = [],
-  onMouseEvent = () => {},
-  handleCompanyClicked = () => {},
-  handleFeaturesClicked = () => {},
-}) => {
+const Button = ({ text = "", className = [], onMouseEvent = () => {} }) => {
   const classArr = className.join(" ");
-  const handleClick = () => {
-    handleCompanyClicked();
-    handleFeaturesClicked();
-  };
 
   return (
     <button
       onMouseOver={onMouseEvent}
       onMouseLeave={onMouseEvent}
-      onClick={handleClick}
       className={classArr}
     >
       {text}
