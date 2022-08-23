@@ -1,5 +1,11 @@
 const CompanyList = () => {
-  return <div>This is CompanyList</div>;
+  return (
+    <ul className="CompanyList dropdown">
+      <li>History</li>
+      <li>Our Team</li>
+      <li>Blog</li>
+    </ul>
+  );
 };
 
 export default CompanyList;

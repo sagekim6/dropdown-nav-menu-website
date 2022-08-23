@@ -1,23 +1,60 @@
+import { useState } from "react";
 import Button from "./Button";
+import FeaturesList from "./FeaturesList";
+import CompanyList from "./CompanyList";
 import { ReactComponent as ArrowDown } from "../images/icon-arrow-down.svg";
 import { ReactComponent as ArrowUp } from "../images/icon-arrow-up.svg";
-import { ReactComponent as Menu } from "../images/icon-menu.svg";
-import { ReactComponent as Close } from "../images/icon-close-menu.svg";
 
 const Navigation = () => {
+  const [isFeaturesClicked, setIsFeaturesClicked] = useState(false);
+  const [isCompanyClicked, setIsCompanyClicked] = useState(false);
+
+  const handleFeaturesClicked = () => {
+    setIsFeaturesClicked(!isFeaturesClicked);
+  };
+  const handleCompanyClicked = () => {
+    setIsCompanyClicked(!isCompanyClicked);
+  };
+
   return (
-    <nav className="desktop_nav">
+    <nav className={"desktop_nav"}>
       <div className="nav_btns">
         <div>
-          <Button text="Features" className={["Features"]} />
-          <ArrowDown />
+          <Button
+            text="Features"
+            className={["Features"]}
+            handleFeaturesClicked={handleFeaturesClicked}
+          />
+          {isFeaturesClicked ? (
+            <>
+              <ArrowUp />
+              <FeaturesList />
+            </>
+          ) : (
+            <>
+              <ArrowDown />
+            </>
+          )}
         </div>
         <div>
-          <Button text="Company" className={["Company"]} />
-          <ArrowDown />
+          <Button
+            text="Company"
+            className={["Company"]}
+            handleCompanyClicked={handleCompanyClicked}
+          />
+          {isCompanyClicked ? (
+            <>
+              <ArrowUp />
+              <CompanyList />
+            </>
+          ) : (
+            <>
+              <ArrowDown />
+            </>
+          )}
         </div>
-        <Button text="Careers" />
-        <Button text="About" />
+        <Button text="Careers" className={["Careers"]} />
+        <Button text="About" className={["About"]} />
       </div>
       <div>
         <Button text="Login" className={["Login"]} />
