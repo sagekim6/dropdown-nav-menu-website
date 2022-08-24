@@ -3,7 +3,7 @@ import MobileMenu from "./MobileMenu";
 import Navigation from "./Navigation";
 
 const Header = () => {
-  const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState(768);
 
   const handleWidth = (e) => {
     setWidth(e.target.innerWidth);

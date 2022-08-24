@@ -56,7 +56,7 @@ const Navigation = () => {
         <Button text="Careers" className={["Careers"]} />
         <Button text="About" className={["About"]} />
       </div>
-      <div>
+      <div className="Login_Register">
         <Button text="Login" className={["Login"]} />
         <Button text="Register" className={["Register"]} />
       </div>

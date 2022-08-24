@@ -191,15 +191,49 @@ header{
     width: 150px;
 
     .Close{
-      margin: 0;
+      margin-left: 105px;
+      margin-top: 15px;
     }
   }
   .desktop_nav{
     display: inline-block;
-    height: 50%;
+    height: 90%;
+    width: 100%;
     .nav_btns>*{
       display: block;
+      margin: 15px 0 15px 15px;
     }
+
+    .Login_Register{
+      text-align: center;
+      >*{
+        margin-right: 0;
+      }
+    }
+
+    .Register{
+      width: 90%;
+      margin-top: 15px;
+    }
+  }
+
+  .dropdown{
+    position: static;
+    box-shadow: none;
+    >*{
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
+
+  .FeaturesList{
+    height: 110px;
+    width: 110px;
+    margin-left: 17px;
+  }
+  .CompanyList{
+    height: 65px;
+    margin-left: 17px;
   }
 }
 
