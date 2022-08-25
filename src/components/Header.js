@@ -3,7 +3,7 @@ import MobileMenu from "./MobileMenu";
 import Navigation from "./Navigation";
 
 const Header = () => {
-  const [width, setWidth] = useState(768);
+  const [width, setWidth] = useState(1440);
 
   const handleWidth = (e) => {
     setWidth(e.target.innerWidth);
@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <header>
       <h1>snap</h1>
-      {width < 768 ? (
+      {width <= 768 ? (
         <>
           <MobileMenu />
         </>
