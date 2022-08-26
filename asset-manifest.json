@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/dropdown-navigation/static/css/main.b590d042.css",
+    "main.js": "/dropdown-navigation/static/js/main.5655532a.js",
+    "static/media/image-hero-desktop.png": "/dropdown-navigation/static/media/image-hero-desktop.50cc22fddeb0c072b414.png",
+    "static/media/image-hero-mobile.png": "/dropdown-navigation/static/media/image-hero-mobile.adefc8b1bbed2ca80470.png",
+    "static/media/client-databiz.svg": "/dropdown-navigation/static/media/client-databiz.cf14690fc6d0344ec958584e43f271a0.svg",
+    "static/media/client-maker.svg": "/dropdown-navigation/static/media/client-maker.a3f90efeb76e583baed6188b558b09b9.svg",
+    "static/media/client-meet.svg": "/dropdown-navigation/static/media/client-meet.a36a6e967434529a9008b7232c146b65.svg",
+    "static/media/client-audiophile.svg": "/dropdown-navigation/static/media/client-audiophile.5402f4a316a79f03e1aeedc90adb77d0.svg",
+    "static/media/icon-reminders.svg": "/dropdown-navigation/static/media/icon-reminders.d573f5028c4469edf76a0b57065af566.svg",
+    "index.html": "/dropdown-navigation/index.html",
+    "static/media/icon-planning.svg": "/dropdown-navigation/static/media/icon-planning.7264cc64a81fa348da1d23defa87d2b5.svg",
+    "static/media/icon-calendar.svg": "/dropdown-navigation/static/media/icon-calendar.238c231afbc7d43b81c625ceea0d1b37.svg",
+    "static/media/icon-todo.svg": "/dropdown-navigation/static/media/icon-todo.84eeba8f3b9a1811c1ea3d7420dcfd98.svg",
+    "static/media/icon-close-menu.svg": "/dropdown-navigation/static/media/icon-close-menu.a81ec206af83281e71369237958329d8.svg",
+    "static/media/icon-menu.svg": "/dropdown-navigation/static/media/icon-menu.1a9b5eb752b4f66d49452351342d70f6.svg",
+    "static/media/icon-arrow-down.svg": "/dropdown-navigation/static/media/icon-arrow-down.bebf05132571af33611ede9cdfdbed0f.svg",
+    "static/media/icon-arrow-up.svg": "/dropdown-navigation/static/media/icon-arrow-up.01861a1152dfab5f1070228d306352f4.svg",
+    "main.b590d042.css.map": "/dropdown-navigation/static/css/main.b590d042.css.map",
+    "main.5655532a.js.map": "/dropdown-navigation/static/js/main.5655532a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b590d042.css",
+    "static/js/main.5655532a.js"
+  ]
+}
