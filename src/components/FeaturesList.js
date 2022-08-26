@@ -2,6 +2,7 @@ import { ReactComponent as Calendar } from "../images/icon-calendar.svg";
 import { ReactComponent as Planning } from "../images/icon-planning.svg";
 import { ReactComponent as Reminders } from "../images/icon-reminders.svg";
 import { ReactComponent as Todo } from "../images/icon-todo.svg";
+import { memo } from "react";
 
 const FeaturesList = () => {
   return (
@@ -26,4 +27,4 @@ const FeaturesList = () => {
   );
 };
 
-export default FeaturesList;
+export default memo(FeaturesList);

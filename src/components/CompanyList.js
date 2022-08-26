@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const CompanyList = () => {
   return (
     <ul className="CompanyList dropdown">
@@ -8,4 +10,4 @@ const CompanyList = () => {
   );
 };
 
-export default CompanyList;
+export default memo(CompanyList);

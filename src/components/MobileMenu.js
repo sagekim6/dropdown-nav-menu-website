@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import { ReactComponent as Menu } from "../images/icon-menu.svg";
 import { ReactComponent as Close } from "../images/icon-close-menu.svg";
 import Navigation from "./Navigation";
@@ -26,4 +26,4 @@ const MobileMenu = () => {
   );
 };
 
-export default MobileMenu;
+export default memo(MobileMenu);

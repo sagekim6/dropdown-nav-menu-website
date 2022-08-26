@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import Button from "./Button";
 import FeaturesList from "./FeaturesList";
 import CompanyList from "./CompanyList";
@@ -15,6 +15,11 @@ const Navigation = () => {
   const handleCompanyClicked = () => {
     setIsCompanyClicked(!isCompanyClicked);
   };
+
+  const CareersMemo = memo(Button);
+  const AboutMemo = memo(Button);
+  const LoginMemo = memo(Button);
+  const RegisterMemo = memo(Button);
 
   return (
     <nav className={"desktop_nav"}>
@@ -53,15 +58,15 @@ const Navigation = () => {
             </>
           )}
         </div>
-        <Button text="Careers" className={["Careers"]} />
-        <Button text="About" className={["About"]} />
+        <CareersMemo text="Careers" className={["Careers"]} />
+        <AboutMemo text="About" className={["About"]} />
       </div>
       <div className="Login_Register">
-        <Button text="Login" className={["Login"]} />
-        <Button text="Register" className={["Register"]} />
+        <LoginMemo text="Login" className={["Login"]} />
+        <RegisterMemo text="Register" className={["Register"]} />
       </div>
     </nav>
   );
 };
 
-export default Navigation;
+export default memo(Navigation);
