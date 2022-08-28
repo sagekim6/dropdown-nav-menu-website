@@ -9,18 +9,19 @@
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
 ### Screenshot
 
-![](./screenshot.jpg)
+<img src="./src/images/dropdown-desktop.png" alt="dropdown-desktop" width="70%"/>  
+<img src="./src/images/dropdown-mobile.png" alt="dropdown-mobile" width="40%" />    
+<img src="./src/images/screen-recording.gif" alt="screen-recording" width="80%" />
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github Repository](https://github.com/sagekim6/dropdown-navigation.git)
+- Live Site URL: [https://sagekim6.github.io/dropdown-navigation/](https://sagekim6.github.io/dropdown-navigation/)
 
 ## My process
 
@@ -32,33 +33,43 @@
 - Mobile-first workflow
 - [React](https://reactjs.org/)
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+#### 1. `Too many re-renders.` error
 
-To see how you can add code snippets, see below:
+```javascript
+function App() {
+  const [isClicked, setIsClicked] = useState(false);
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+  const handleIsClicked = setIsClicked(!isClicked); // <- needs to be changed
 
-```css
-.proud-of-this-css {
-  color: papayawhip;
+  return (
+    <>
+      <Header isClicked={isClicked} handleIsClicked={handleIsClicked} />
+      <Main />
+    </>
+  );
 }
+
+export default App;
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
+- state가 바뀌는 함수가 있다면 렌더링되는 과정에서 계속 리렌더링되기 때문에 `Too many re-renders.` error가 난다.
+
+```javascript
+const handleIsClicked = () => {
+  setIsClicked(!isClicked); // 화살표 함수 사용
 };
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+- 화살표 함수로 만들어 주면 간단하게 해결된다
+
+#### 2. Using `SVG` image
+
+- 컴포넌트로 임포트해와서 사용해주었다.  
+  `import { ReactComponent as ArrowUp } from "../images/icon-arrow-up.svg";`
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Website - [https://sagekim6.github.io/dropdown-navigation/](https://sagekim6.github.io/dropdown-navigation/)
+- Frontend Mentor - [@sagekim6](https://www.frontendmentor.io/profile/sagekim6)
