@@ -6,111 +6,132 @@ $gray-color: hsl(0, 0%, 41%);
 $black-color: hsl(0, 0%, 8%);
 $font-size: 18px;
 
-html, body, #root{
+html,
+body,
+#root {
   margin: 0;
   height: 100%;
   background-color: $white-color;
   font-family: 'Montserrat', sans-serif;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-button{
+button {
   cursor: pointer;
   background: none;
   border: none;
 }
 
-ul{
+ul {
   list-style: none;
   padding: 0;
 }
 
 /* LARGE SCREEN */
-@media (max-width: 1440px){
+@media (max-width: 1440px) {
+
   /* HEADER */
-  header{
+  header {
     display: flex;
     align-items: center;
     height: 10%;
-    h1{
+
+    h1 {
       margin: 0 35px 0 35px;
     }
-  
-    .desktop_nav{
+
+    .desktop_nav {
       height: 100%;
       display: flex;
       flex: 1;
       justify-content: space-between;
       align-items: center;
-      .nav_btns>*{
+
+      .nav_btns>* {
         display: inline-block;
         margin-right: 25px;
       }
-      *{
+
+      * {
         color: $gray-color;
         font-size: 12px;
       }
-      .Features:hover, .Company:hover, .Careers:hover,.About:hover{
+
+      .Features:hover,
+      .Company:hover,
+      .Careers:hover,
+      .About:hover {
         color: $black-color;
         font-weight: 700;
       }
-      .Login, .Register{
+
+      .Login,
+      .Register {
         margin-right: 35px;
       }
-      .Login:hover, .Register:hover{
+
+      .Login:hover,
+      .Register:hover {
         color: $black-color;
-      font-weight: 700;
+        font-weight: 700;
       }
-      .Register{
+
+      .Register {
         border: 1px solid $gray-color;
         border-radius: 9px;
         width: 110px;
-        height:35px;
+        height: 35px;
       }
-      .Register:hover{
-            border: 1px solid $black-color;
-          }
+
+      .Register:hover {
+        border: 1px solid $black-color;
+      }
     }
-  
-    .dropdown{
+
+    .dropdown {
       position: absolute;
       background-color: $white-color;
       border-radius: 9px;
       box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
-      >*{
+
+      >* {
         margin-left: 15px;
         margin-top: 10px;
       }
-      >*:hover{
+
+      >*:hover {
         font-weight: 700;
       }
     }
-  
-    .FeaturesList{
+
+    .FeaturesList {
       width: 120px;
       height: 135px;
       left: 120px;
-      li *:first-child{
+
+      li *:first-child {
         margin-right: 6px;
       }
     }
-    .CompanyList{
+
+    .CompanyList {
       width: 90px;
       height: 85px;
       left: 250px;
     }
   }
+
   /* MAIN */
-  main{
+  main {
     height: 80%;
     width: 83%;
     display: flex;
     margin: 0 auto;
 
-    section{
+    section {
       width: 60%;
       display: flex;
       flex-direction: column;
@@ -118,20 +139,20 @@ ul{
       padding-left: 20px;
 
       .content {
-        h2{
+        h2 {
           font-size: 3.3rem;
           margin: 30px 0 30px 0;
           width: 58%;
         }
 
-        p{
+        p {
           font-size: 14px;
           color: $gray-color;
           width: 55%;
           margin-bottom: 7%;
         }
 
-        .learn_more_btn{
+        .learn_more_btn {
           background-color: $black-color;
           color: $white-color;
           transition-duration: 0.3s;
@@ -140,7 +161,7 @@ ul{
           height: 45px;
         }
 
-        .learn_more_toggle{
+        .learn_more_toggle {
           background-color: $white-color;
           color: $black-color;
           border: 1px solid $black-color;
@@ -149,21 +170,21 @@ ul{
         }
       }
 
-      .client_images{
-        >*{
+      .client_images {
+        >* {
           margin-right: 30px;
           width: 75px;
         }
       }
     }
-    
-    .bg_container{
+
+    .bg_container {
       width: 40%;
 
-      .bg_image{
+      .bg_image {
         width: 100%;
         height: 100%;
-        background-image: url('/images/image-hero-desktop.png');
+        background-image: url('images/image-hero-desktop.png');
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -172,96 +193,104 @@ ul{
   }
 }
 
-@media (max-width: 768px){
-header{
-  justify-content: space-between;
-  .mobile_menu{
-    display: block;
-    margin-right: 20px;
-    cursor: pointer;
-  }
-  .aside_menu{
-    background-color: $white-color;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 150px;
-    border-left: 0.5px solid hsl(0, 0%, 89%);
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+@media (max-width: 768px) {
+  header {
+    justify-content: space-between;
 
-    .Close{
-      margin-left: 105px;
-      margin-top: 15px;
-    }
-  }
-  .desktop_nav{
-    display: inline-block;
-    height: 90%;
-    width: 100%;
-    .nav_btns>*{
+    .mobile_menu {
       display: block;
-      margin: 15px 0 15px 15px;
+      margin-right: 20px;
+      cursor: pointer;
     }
 
-    .Login_Register{
-      text-align: center;
-      >*{
-        margin-right: 0;
+    .aside_menu {
+      background-color: $white-color;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 150px;
+      border-left: 0.5px solid hsl(0, 0%, 89%);
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+      .Close {
+        margin-left: 105px;
+        margin-top: 15px;
       }
     }
 
-    .Register{
-      width: 90%;
-      margin-top: 15px;
+    .desktop_nav {
+      display: inline-block;
+      height: 90%;
+      width: 100%;
+
+      .nav_btns>* {
+        display: block;
+        margin: 15px 0 15px 15px;
+      }
+
+      .Login_Register {
+        text-align: center;
+
+        >* {
+          margin-right: 0;
+        }
+      }
+
+      .Register {
+        width: 90%;
+        margin-top: 15px;
+      }
+    }
+
+    .dropdown {
+      position: static;
+      box-shadow: none;
+
+      >* {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+
+    .FeaturesList {
+      height: 110px;
+      width: 110px;
+      margin-left: 17px;
+    }
+
+    .CompanyList {
+      height: 65px;
+      margin-left: 17px;
     }
   }
 
-  .dropdown{
-    position: static;
-    box-shadow: none;
-    >*{
-      margin-left: 0;
-      margin-top: 10px;
-    }
-  }
-
-  .FeaturesList{
-    height: 110px;
-    width: 110px;
-    margin-left: 17px;
-  }
-  .CompanyList{
-    height: 65px;
-    margin-left: 17px;
-  }
-}
-
-  main{
+  main {
     height: 85%;
     width: 90%;
 
-    section{
+    section {
       width: 60%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
 
       .content {
-        h2{
+        h2 {
           font-size: 3rem;
           margin: 20px 0 20px 0;
           width: 92%;
         }
 
-        p{
+        p {
           font-size: 12px;
           width: 75%;
           margin-bottom: 10px;
         }
       }
-      .client_images{
-        >*{
+
+      .client_images {
+        >* {
           margin-right: 20px;
           width: 65px;
         }
@@ -271,53 +300,55 @@ header{
 }
 
 /* SMALL SCREEN */
-@media (max-width: 576px){
-main{
-  flex-direction: column-reverse;
-  height: 90%;
-  width: 100%;
-
-  section{
-    padding: 0;
+@media (max-width: 576px) {
+  main {
+    flex-direction: column-reverse;
+    height: 90%;
     width: 100%;
-    height: 50%;
-    justify-content: space-around;
-    align-items: center;
 
-    .content{
-      text-align: center;
-      padding: 0 10px 0 10px;
-
-      h2{
-        font-size: 2rem;
-        margin: 20px 0 20px 0;
-        width: 100%;
-      }
-
-      p{
-        width: 100%;
-        margin-bottom: 10px;
-      }
-      .learn_more_btn{
-        font-size: 12px;
-        width: 110px;
-        height: 40px;
-      }
-    }
-    .client_images{
+    section {
+      padding: 0;
       width: 100%;
-      display: flex;
-      justify-content: space-evenly;
+      height: 50%;
+      justify-content: space-around;
+      align-items: center;
+
+      .content {
+        text-align: center;
+        padding: 0 10px 0 10px;
+
+        h2 {
+          font-size: 2rem;
+          margin: 20px 0 20px 0;
+          width: 100%;
+        }
+
+        p {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+
+        .learn_more_btn {
+          font-size: 12px;
+          width: 110px;
+          height: 40px;
+        }
+      }
+
+      .client_images {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+      }
+    }
+
+    .bg_container {
+      height: 50%;
+      width: 100%;
+
+      .bg_image {
+        background-image: url('images/image-hero-mobile.png');
+      }
     }
   }
-
-  .bg_container{
-    height: 50%;
-    width: 100%;
-    .bg_image{
-      background-image: url('/images/image-hero-mobile.png');
-    }
-  }
-}
-
 }
