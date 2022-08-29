@@ -20,7 +20,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://sagekim6.github.io/dropdown-navigation",
+  "homepage": "https://sagekim6.github.io/dropdown-navigation/",
   "eslintConfig": {
     "extends": [
       "react-app",

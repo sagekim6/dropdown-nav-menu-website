@@ -16,8 +16,8 @@
 
 ### Screenshot
 
-- Desktop design  
-  <img src="./src/images/dropdown-desktop.png" alt="dropdown-desktop"/>
+- Web design  
+  <img src="./src/images/dropdown-desktop.png" alt="dropdown-web"/>
 - Mobile design  
   <img src="./src/images/dropdown-mobile.png" alt="dropdown-mobile" width="40%" height="30%" />
 - 실행 화면  
@@ -37,14 +37,131 @@
 ### Built with
 
 - Semantic HTML5 markup
-- Sass
+- Scss
 - Flexbox
+- Media query
 - [React](https://reactjs.org/)
 
 ### Advanced feature
 
-  <img src="./src/images/navigation.png" alt="navigation" />  
+1. 리액트 컴포넌트를 사용한 네비게이션 메뉴 개발
+
+- Web version  
+  <img src="./src/images/navigation.png" alt="navigation" />
+- Mobile version  
   <img src="./src/images/mobile-screen-recording.gif" alt="mobile-screen-recording" width="30%" heigth="30%" />
+- `useEffect` 훅을 사용해 "resize" 이벤트를 감지해서 화면의 넓이가 768px 이하일 때 모바일 메뉴 버튼이 나타나도록 개발했습니다.
+
+```javascript
+const Header = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  const handleWidth = (e) => {
+    setWidth(e.target.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWidth);
+    return () => {
+      window.removeEventListener("resize", handleWidth);
+    };
+  }, []);
+
+  return (
+    <header>
+      <h1>snap</h1>
+      {width <= 768 ? (
+        <>
+          <MobileMenu />
+        </>
+      ) : (
+        <>
+          <Navigation />
+        </>
+      )}
+    </header>
+  );
+};
+```
+
+2. 리액트 훅을 사용해 불필요한 렌더링 최소화
+
+- Features, Company 버튼 클릭시 다른 버튼들도 불필요하게 렌더링 되는 것을 `memo` 훅을 사용해 최소화하였습니다.
+
+```javascript
+import { useState, memo } from "react";
+
+const Navigation = () => {
+  const [isFeaturesClicked, setIsFeaturesClicked] = useState(false);
+  const [isCompanyClicked, setIsCompanyClicked] = useState(false);
+
+  const handleFeaturesClicked = () => {
+    setIsFeaturesClicked(!isFeaturesClicked);
+  };
+  const handleCompanyClicked = () => {
+    setIsCompanyClicked(!isCompanyClicked);
+  };
+
+  // memo 훅을 사용해 컴포넌트 자체를 wrapping
+  const CareersMemo = memo(Button);
+  const AboutMemo = memo(Button);
+  const LoginMemo = memo(Button);
+  const RegisterMemo = memo(Button);
+
+  return (
+    <nav className={"desktop_nav"}>
+      <div className="nav_btns">
+        {/*
+       
+       다른 코드들...
+       
+       */}
+        <CareersMemo text="Careers" className={["Careers"]} />
+        <AboutMemo text="About" className={["About"]} />
+      </div>
+      <div className="Login_Register">
+        <LoginMemo text="Login" className={["Login"]} />
+        <RegisterMemo text="Register" className={["Register"]} />
+      </div>
+    </nav>
+  );
+};
+
+export default memo(Navigation); // Navigation 컴포넌트 자체도 미리 wrapping 해서 export하였다.
+```
+
+3. 자주 사용되는 기능을 컴포넌트로 만들어 재사용성 높이기
+
+- 프로젝트에서 버튼이 많이 사용되어서 따로 컴포넌트로 만들어 재사용성을 높였습니다.
+- 다양한 prop을 받고 기본값을 미리 지정해서 값이 제대로 전달되지 않으면 기본값이 할당되도록 개발했습니다.
+
+```javascript
+const Button = ({
+  text = "",
+  className = [],
+  onMouseEvent = () => {},
+  handleFeaturesClicked = () => {},
+  handleCompanyClicked = () => {},
+}) => {
+  const classArr = className.join(" ");
+  const handleClick = () => {
+    handleFeaturesClicked();
+    handleCompanyClicked();
+  };
+  return (
+    <button
+      onMouseOver={onMouseEvent}
+      onMouseLeave={onMouseEvent}
+      onClick={handleClick}
+      className={classArr}
+    >
+      {text}
+    </button>
+  );
+};
+
+export default Button;
+```
 
 ### What I learned
 
